@@ -1,31 +1,37 @@
-
 #include <stdio.h>
 
-int main() {
-    int a[] = {12, 24, 36, 48, 60, 72};
-    int n = 6, key = 48;
-    int left = 0, right = n - 1, mid;
+int main()
+{
+    int n = 10;
+    int arr[10] = {12, 23, 3, 20, 30, 41, 55, 70, 80, 90};
+    int target;
 
-    printf("Given array: ");
-    for (int i = 0; i < n; i++)
-        printf("%d ", a[i]);
+    printf("Enter the target value: ");
+    scanf("%d", &target);
 
-    printf("\nKey to search: %d\n", key);
+    int low = 0, high = n - 1, mid;
 
-    while (left <= right) {
-        mid = (left + right) / 2;
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
 
-        if (a[mid] == key) {
-            printf("Found at position %d\n", mid + 1);
-            break;
-        } else if (key > a[mid])
-            left = mid + 1;
-        else
-            right = mid - 1;
+        if (arr[mid] == target)
+        {
+            printf("Target found.");
+            return 0;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else if (arr[mid] > target)
+        {
+            high = mid - 1;
+        }
     }
 
-    if (left > right)
-        printf("Key not found\n");
+    printf("Element not found");
 
     return 0;
 }
+

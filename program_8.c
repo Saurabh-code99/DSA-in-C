@@ -1,27 +1,27 @@
-
 #include <stdio.h>
 
-int main() {
-    int a[5] = {10, 20, 30, 40, 50};
-    int key, i, found = 0;
+int main(){
+    int arr[10] = { 43,4565,32,65,38,556,23,675,321,6454};
+    int target;
+    printf("Enter the target value: ");
+    scanf("%d", &target);
 
-    printf("Array elements: ");
-    for (i = 0; i < 5; i++)
-        printf("%d ", a[i]);
+    int found = 0;
 
-    printf("\nEnter element to search: ");
-    scanf("%d", &key);
-
-    for (i = 0; i < 5; i++) {
-        if (a[i] == key) {
-            printf("Element found at position %d\n", i + 1);
+    for (int i = 0; i < 10; i++){
+        if (arr[i] == target){
             found = 1;
             break;
         }
     }
 
-    if (!found)
-        printf("Element not found\n");
 
-    return 0;
+    if (found == 1){
+        printf("Element found.\n");
+    }
+    else{
+        printf("Element not found.\n");
+    }
+
+return 0;
 }
